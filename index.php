@@ -1,3 +1,6 @@
 <?php 
-    echo("Hellow world");
+    $name = "Ryutaaaa";
+    $long_name = "Hirarito";
+
+    echo $name . " " . $long_name;
 ?>
