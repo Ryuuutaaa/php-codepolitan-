@@ -2,5 +2,5 @@
     $welcome = "Selamat datang";
     $nama = "Rafii";
 
-    echo $welcome . "," . $nama;
+    echo $welcome . "," . $nama;    
 ?>
