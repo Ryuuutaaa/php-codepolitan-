@@ -1,7 +1,13 @@
 <?php 
-    $nama = "Rafi";
-    $asal = "Badung";
+    $nama = ucwords("rafi"); // menandai setiap awal huruf akan diubah menjadi huruf kapital
+    $asal = strtoupper("badung"); // memnandai semua huruf akan dibuah menjadi huruf kapital 
     $umur = 18;
+
+    function pesan($depan, $belakang){
+        echo $depan . " " . $belakang;
+    }
+
+    pesan("evos", "eman"); // untuk memanggil function yang berisi parameter
 
     $slogan  = "<h1>Ada raket kita baywan</h1>";
     $jabawan = "<h1>Koknya mana</h1>";
