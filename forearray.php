@@ -11,4 +11,4 @@ for ($i = 0; $i < 15; $i++) {
 }
 
 
-echo "jumlah warna pada array sebanyak $jumlah_warna";
+echo "jumlah warna pada array sebanyak $jumlah_warna kali";
