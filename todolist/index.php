@@ -22,6 +22,12 @@ if (isset($_POST['delete'])) {
     $todos = array_values($todos);
     file_put_contents("todo.txt", serialize($todos));
 }
+
+if (isset($_POST['status'])) {
+    $index = $_POST['index'];
+    $todos[$index]['status'] = !$todos[$index]['status'];
+    file_put_contents("todo.txt", serialize($todos));
+}
 ?>
 
 <h1>Todo List</h1>
@@ -34,8 +40,13 @@ if (isset($_POST['delete'])) {
 <ul>
     <?php foreach ($todos as $index => $item): ?>
         <li>
-            <input type="checkbox" name="status" <?php echo $item['status'] ? 'checked' : ''; ?>>
-            <label><?php echo htmlspecialchars($item['todo']); ?></label>
+            <form method="post" style="display:inline;">
+                <input type="hidden" name="index" value="<?php echo $index; ?>">
+                <input type="checkbox" name="status" <?php echo $item['status'] ? 'checked' : ''; ?> onchange="this.form.submit()">
+                <label style="<?php echo $item['status'] ? 'text-decoration: line-through;' : ''; ?>">
+                    <?php echo htmlspecialchars($item['todo']); ?>
+                </label>
+            </form>
             <form method="post" style="display:inline;">
                 <input type="hidden" name="delete" value="<?php echo $index; ?>">
                 <button type="submit" style="border:none; background:none; color:red; cursor:pointer;">hapus</button>
