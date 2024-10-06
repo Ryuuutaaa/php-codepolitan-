@@ -47,7 +47,7 @@ if (isset($_POST['status'])) {
                     <?php echo htmlspecialchars($item['todo']); ?>
                 </label>
             </form>
-            <form method="post" style="display:inline;">
+            <form method="post" style="display:inline;" onsubmit="return confirm('Apakah Anda yakin ingin menghapus item ini?');">
                 <input type="hidden" name="delete" value="<?php echo $index; ?>">
                 <button type="submit" style="border:none; background:none; color:red; cursor:pointer;">hapus</button>
             </form>
